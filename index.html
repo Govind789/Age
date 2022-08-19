@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's your Dog Age ?</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            background-color: blue ;
+        }
+        .mainsection{
+            background-color: bisque;
+            width: fit-content;
+            height: 429px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid;
+            /* border-radius: 40px; */
+            /* border-image: linear-gradient(27deg,red 21%, skyblue 39%,#00806e 84%); */
+            border-image-width: 23px;
+            border-image-slice: 110;
+        }
+        h3{
+            background-color: aqua;
+            height: auto;
+            width: 342px;
+            font-size: 24px;
+            font-style: italic;
+            border: 9px solid;
+            border-style: groove;
+            border-radius: 25px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 35px;
+        }
+        .mainage{
+            font-size: 30px;
+            padding: 46px;
+            padding-bottom: 10px;
+            text-align: center;
+            font-variant: petite-caps;
+        }
+        .mainageresult{
+            font-size: 27px;
+            /* padding: 85px; */
+            padding-top: 20px;
+            text-align: center;
+            font-variant: petite-caps;
+        }
+        input[type="number"],[type="text"]{
+            border: 1px solid;
+            /* border-radius: 17px; */
+            height: 26px;
+            width: 84px;
+            background-color: black;
+            color: white;
+            /* margin: 0 529px; */
+            text-align: center;
+            font-size: large;
+            display: inline-block;
+        }
+        #result{
+            margin: 5px 610px;
+            width: 130px;
+        }
+        #ageinyears{
+            margin-left: 585px  ;
+        }
+        input[type="button"]{
+            margin: 10px 645px;
+        }
+        /* @media only screen and (max-width:1366px){
+        .head,.mainsection,.mainage,.mainageresult,.complete{
+            width: 100%;
+        } 
+        } */
+    </style>
+</head>
+<body>
+    <section class="mainsection">
+    <h3 class="head"> Know Your Dog Age as a Human </h3>
+    <div>
+        <p id="age" class="mainage">Type your age here :</p>
+        <input type="number" id="ageinyears" value="" placeholder="years">
+        <input type="number" id="ageinmonths" value="" placeholder="months" min="0" max="12">
+    </div>
+    <div class="complete"><input type="button" value="SUBMIT" onclick="done()"></div>
+    <div>
+        <p id="age" class="mainageresult">The HumanAge of your Dog is:</p>
+        <input type="text" id="result">
+    </div>
+    </section>
+</body>
+<script>
+    // let age = prompt(" What's your Dog Age ? ");
+    // let formula = (age - 2)*4 + 21;
+    // alert ("The HumanAge of your Dog is:"+ formula);
+    function done(){
+        let data = document.getElementById("ageinyears").value;
+        let dataEntry = document.getElementById("ageinmonths").value;
+        // let limit = /[a-zA-Z!@#$%^*_+-=()`~]/g;
+        let formula = [((data - 2)*4 + 21)*12 + dataEntry*1];
+        if (data=="" , dataEntry==""){
+            document.getElementById("result").value = 0 ;
+            data = 0 ;
+            dataEntry = 0 ;
+        }
+        else{
+            document.getElementById("result").value = formula/12;
+        }
+    }
+</script>
+</html>
